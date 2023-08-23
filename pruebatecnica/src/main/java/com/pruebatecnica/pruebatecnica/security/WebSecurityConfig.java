@@ -49,7 +49,6 @@ public class WebSecurityConfig {
 
     @Bean
     AuthenticationManager authManager(HttpSecurity http) throws Exception {
-        System.out.println("aqui");
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService())
                 .and()

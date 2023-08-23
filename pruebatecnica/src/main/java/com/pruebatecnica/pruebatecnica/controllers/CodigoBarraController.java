@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pruebatecnica.pruebatecnica.models.CodigoBarraModel;
+import com.pruebatecnica.pruebatecnica.models.ProductoModel;
 import com.pruebatecnica.pruebatecnica.services.CodigoBarraServices;
+import com.pruebatecnica.pruebatecnica.services.ProductoServices;
 
 @RestController
 @RequestMapping("/codigobarra")
@@ -20,6 +22,7 @@ public class CodigoBarraController {
 
     @Autowired
     CodigoBarraServices codigoBarraServices;
+    ProductoServices productoServices;
 
     @GetMapping()
     public ArrayList<CodigoBarraModel> obtenerTodos() {
@@ -47,7 +50,7 @@ public class CodigoBarraController {
     }
 
     @GetMapping("/codigo")
-    public CodigoBarraModel obtenerByCodigo(String codigo) {
+    public ProductoModel obtenerCategoriaByCodigo(String codigo) {
         return codigoBarraServices.obtenerByCodigo(codigo);
     }
 
